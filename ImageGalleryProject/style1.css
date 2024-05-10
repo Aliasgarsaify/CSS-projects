@@ -1,0 +1,62 @@
+/* using grid */
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+.container{
+    margin: 0 auto;
+    width: 1200px;
+    
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 20px;
+    
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    margin: 30px ; 
+}
+.card{
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden; 
+
+}
+figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    color: white;
+    opacity: 0;
+}
+.card img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 10px #333);
+}
+.card:hover img{
+    filter: grayscale(0%);
+    transition: 0.5s;
+}
+.card:hover figcaption{
+   opacity: 1;
+   transform: scale(1.03);
+}
